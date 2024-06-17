@@ -1,11 +1,48 @@
 package functionalinterface;
 
+import data.Student;
+import data.StudentaDataBase;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+class PredicateEx{
+    static Predicate<Student>studentPredicate=student -> student.getGradeLevel()>=3;
+    static Predicate<Student>getStudentPredicate=student -> student.getGpa()>3.5;
+    public static void predicateStudentEx(){
+        List<Student>studentList= StudentaDataBase.getAllStudent();
+//        Predicate<Student>studentPredicate1=student->{
+//            if (studentPredicate.test(student)){
+//                System.out.println("student :"+student);
+//            }
+//            System.out.println();
+//        }
+        studentList.forEach(student -> {
+            if (studentPredicate.test(student)){
+                System.out.println("student :"+student);
+            }
+        });
+    }
 
+    public static void predicateStudentEx2(){
+        List<Student>studentList= StudentaDataBase.getAllStudent();
+//        Predicate<Student>studentPredicate1=student->{
+//            if (studentPredicate.test(student)){
+//                System.out.println("student :"+student);
+//            }
+//        };
+        studentList.forEach(student -> {
+            if (studentPredicate.test(student)){
+                System.out.println("student :"+student);
+            }
+        });
+    }
+
+}
 //predicate is a boolean interface function
 public class PredicateFunctionalInterface {
+    static Predicate<Integer>predicateEven=x->x%2==0;
+    static Predicate<Integer>predicateOdd=y->y%2!=0;
     public static void afterJava8(){
         Predicate<Integer> predicate=x->x>100;
         System.out.println("number is grater then 100 :"+predicate.test(1000));
@@ -21,4 +58,14 @@ public class PredicateFunctionalInterface {
             }
         }
     }
+    public static void checkAndOr(){
+        System.out.println("And Operation result :"+predicateEven.and(predicateOdd).test(12));
+        System.out.println("Or Operation result :"+predicateEven.or(predicateOdd).test(12));
+        System.out.println("negation Operation result :"+predicateEven.and(predicateOdd).negate().test(12));
+
+    }
+    public static void additionalMethod(){
+        PredicateEx.predicateStudentEx();
+    }
+
 }
