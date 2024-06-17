@@ -1,6 +1,4 @@
-import functionalinterface.BiConsumerInterfaceEx;
-import functionalinterface.ConsumerFuncInterface;
-import functionalinterface.PredicateFunctionalInterface;
+import functionalinterface.*;
 import lambdas.ComparatorLambdaEx;
 import lambdas.LambdaRunnableEx;
 
@@ -13,6 +11,7 @@ public class Main {
         runConsumerFunctionalInterfaces();
         runBiConsumerFunctionalInterfaces();
         runPredicateFunctionalInterface();
+        runFunction();
     }
 
     public static void runLambdaEx() {
@@ -40,6 +39,15 @@ public class Main {
 //        PredicateFunctionalInterface.afterJava8();
 //        PredicateFunctionalInterface.checkEvenOdd();
 //        PredicateFunctionalInterface.checkAndOr();
-        PredicateFunctionalInterface.additionalMethod();
+//        PredicateFunctionalInterface.additionalMethod();
+
+//        new PredicateAndConsumerEx().printNameAndActivities();
+//        BiPredicateEx.printNameAndActivities();
     }
+    public static void runFunction() {
+//        FunctionIntefaceEx.functionfeature();
+//        FunctionStudentEx.studentNameAndGPAByfilter();
+        BiFunctionInterface.printNameAndGPA();
+    }
+
 }

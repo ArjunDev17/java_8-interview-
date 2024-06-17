@@ -37,6 +37,14 @@ class PredicateEx{
             }
         });
     }
+    public static void filterStudents(){
+        List<Student>studentList=StudentaDataBase.getAllStudent();
+        studentList.forEach(student->{
+            if(studentPredicate.and(getStudentPredicate).test(student)){
+                System.out.println(student);
+        }
+        });
+    }
 
 }
 //predicate is a boolean interface function
@@ -65,7 +73,8 @@ public class PredicateFunctionalInterface {
 
     }
     public static void additionalMethod(){
-        PredicateEx.predicateStudentEx();
+//        PredicateEx.predicateStudentEx();
+        PredicateEx.filterStudents();
     }
 
 }
