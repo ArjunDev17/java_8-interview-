@@ -8,7 +8,7 @@ public class SecondNumLarges {
     static void main() {
         List<Integer> arr2= Arrays.asList(11,4,22,5,6,9);
 
-       int val= arr2.stream().sorted(
+                   int val= arr2.stream().sorted(
                Comparator.reverseOrder()
        ).skip(1).findFirst().get();
 
